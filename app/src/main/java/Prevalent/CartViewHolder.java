@@ -29,7 +29,7 @@ public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         itemClickListener.onClick(view,getAdapterPosition(),false);
     }
 
-    public void setItemClickListner(ItemClickListener itemClickListener) {
+    public void setItemClickListener(ItemClickListener itemClickListener) {
         this.itemClickListener = itemClickListener;
     }
 }
