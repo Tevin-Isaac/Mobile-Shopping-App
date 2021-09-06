@@ -1,4 +1,4 @@
-package com.example.brandykicks. Prevalent;
+package  Prevalent;
 
 import com.example.brandykicks.Model.Users;
 

@@ -13,7 +13,7 @@ import com.example.brandykicks.R;
 
 import Interface.ItemClickListener;
 
-public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class  CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView txtProductName,txtProductPrice,txtProductQuantity;
     private ItemClickListener itemClickListener;
 
