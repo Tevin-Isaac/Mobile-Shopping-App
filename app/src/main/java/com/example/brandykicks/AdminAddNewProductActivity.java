@@ -1,4 +1,4 @@
-package com.example.brandykicks.;
+package com.example.brandykicks;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
