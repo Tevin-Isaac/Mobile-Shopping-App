@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.brandykicks">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,15 +12,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Brandykicks">
+        tools:replace="android:theme">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name="com.example.brandykicks.HomeActivity"
+            android:exported="true"/>
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity android:name="com.example.brandykicks.SettingsActivity" />
+        <activity android:name="com.example.brandykicks.SearchProductsActivity" />
+        <activity android:name="com.example.brandykicks.RegisterActivity" />
+        <activity android:name="com.example.brandykicks.ProductDetailsActivity" />
+        <activity android:name="com.example.brandykicks.LoginActivity" />
+        <activity android:name="com.example.brandykicks.ConfirmFinalOrderActivity" />
+        <activity android:name="com.example.brandykicks.CartActivity" />
+        <activity android:name="com.example.brandykicks.AdminUserProductsActivity" />
+        <activity android:name="com.example.brandykicks.AdminNewOrdersActivity" />
+        <activity android:name="com.example.brandykicks.AdminCategoryActivity" />
+        <activity android:name="com.example.brandykicks.AdminAddNewProductActivity" />
+        <activity android:name="com.example.brandykicks.MainActivity"
+            android:exported="TODO">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
