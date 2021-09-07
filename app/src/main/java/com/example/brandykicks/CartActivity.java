@@ -1,4 +1,4 @@
-package com.example.brandykicks.;
+package com.example.brandykicks;
 
 import android.content.DialogInterface;
 import android.content.Intent;

@@ -1,5 +1,6 @@
-package com.example.brandykicks.;
+package com.example.brandykicks;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 
@@ -45,8 +46,9 @@ public class AdminNewOrdersActivity extends AppCompatActivity {
                         .build();
         FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder> adapter =
                 new FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewHolder>(options) {
+                    @SuppressLint("SetTextI18n")
                     @Override
-                    protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, final int position, @NonNull final AdminOrders model) {
+                    protected void onBindViewHolder(@NonNull AdminOrdersViewHolder holder, @SuppressLint("RecyclerView") final int position, @NonNull final AdminOrders model) {
 
                         holder.userName.setText("Name: "+model.getName());
                         holder.userPhoneNumber.setText("Name: "+model.getPhone());
