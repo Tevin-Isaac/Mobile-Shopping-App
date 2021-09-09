@@ -12,24 +12,28 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Brandykicks"
+        android:theme="@style/Theme.AppCompat"
         tools:replace="android:theme">
-        <activity android:name="com.example.brandykicks.HomeActivity"
-
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name="com.example.brandykicks.SettingsActivity" />
-        <activity android:name="com.example.brandykicks.SearchProductsActivity" />
-        <activity android:name="com.example.brandykicks.RegisterActivity" />
-        <activity android:name="com.example.brandykicks.ProductDetailsActivity" />
-        <activity android:name="com.example.brandykicks.LoginActivity" />
-        <activity android:name="com.example.brandykicks.ConfirmFinalOrderActivity" />
-        <activity android:name="com.example.brandykicks.CartActivity" />
-        <activity android:name="com.example.brandykicks.AdminUserProductsActivity" />
-        <activity android:name="com.example.brandykicks.AdminNewOrdersActivity" />
-        <activity android:name="com.example.brandykicks.AdminCategoryActivity" />
-        <activity android:name="com.example.brandykicks.AdminAddNewProductActivity" />
-        <activity android:name="com.example.brandykicks.MainActivity"
-            tools:ignore="IntentFilterExportedReceiver">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".SearchProductsActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ProductDetailsActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ConfirmFinalOrderActivity" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".AdminUserProductsActivity" />
+        <activity android:name=".AdminNewOrdersActivity" />
+        <activity android:name=".AdminCategoryActivity" />
+        <activity android:name=".AdminAddNewProductActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
