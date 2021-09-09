@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.brandykicks.Interface.ItemClickListener;
 import com.example.brandykicks.R;
 
-import Interface.ItemClickListener;
+
 
 public class CartViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView txtProductName,txtProductPrice,txtProductQuantity;
