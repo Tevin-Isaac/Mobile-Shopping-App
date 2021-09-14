@@ -29,6 +29,6 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
                 //the current activity will get finished.
             }
-        }, 4000);
+        }, 3000);
     }
 }
