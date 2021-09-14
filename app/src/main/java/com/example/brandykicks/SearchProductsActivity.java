@@ -24,16 +24,25 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-public class SearchProductsActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class SearchProductsActivity extends AppCompatActivity implements View.OnClickListener {
     private Button searchBtn;
     private EditText inputText;
     private RecyclerView searchList;
     private String searchInput;
+    @BindView(R.id.search_product_name) EditText mLocationEditText;
+    @BindView(R.id.findRestaurantsButton) Button mFindRestaurantsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_products);
+        ButterKnife.bind(this);
+
+        mFindRestaurantsButton.setOnClickListener(this);
+
         inputText = findViewById(R.id.search_product_name);
         searchBtn = findViewById(R.id.search_btn);
         searchList = findViewById(R.id.search_list);
@@ -43,12 +52,18 @@ public class SearchProductsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 searchInput = inputText.getText().toString();
                 onStart();
-
-
             }
         });
+    }
 
-
+    @Override
+    public void onClick(View v){
+        if (v == mFindRestaurantsButton) {
+            String location = mLocationEditText.getText().toString();
+            Intent intent = new Intent(SearchProductsActivity.this, ProductsActivity.class);
+            intent.putExtra("location", location);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -88,4 +103,6 @@ public class SearchProductsActivity extends AppCompatActivity {
         searchList.setAdapter(adapter);
         adapter.startListening();
     }
+
+
 }

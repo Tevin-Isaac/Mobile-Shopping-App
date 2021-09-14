@@ -13,34 +13,36 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         >
+
         <EditText
 
             android:id="@+id/search_product_name"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="5dp"
+            android:background="#000"
             android:hint="Product Name"
+            android:padding="9dp"
+            android:textColor="#fff"
+            android:textColorHint="#fff"
             android:textSize="18dp"
             android:textStyle="bold"
-            android:background="@android:color/white"
-            android:layout_marginStart="5dp"
-            android:layout_centerVertical="true"
-            android:padding="9dp"
-            android:textColorHint="@color/colorPrimaryDark"
 
-            />
+            tools:ignore="UnknownId" />
+
         <Button
             android:id="@+id/search_btn"
             android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toRightOf="@+id/search_product_name"
+            android:background="@color/colorPrimaryDark"
+            android:padding="9dp"
             android:text="Search"
             android:textColor="@android:color/white"
             android:textSize="16dp"
-            android:textStyle="bold"
-            android:layout_centerInParent="true"
-            android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
-            android:padding="9dp"
-            android:layout_toRightOf="@+id/search_product_name"
-            />
+            android:textStyle="bold" />
 
     </RelativeLayout>
     <androidx.recyclerview.widget.RecyclerView
@@ -52,4 +54,14 @@
         >
 
     </androidx.recyclerview.widget.RecyclerView>
+
+    <Button
+        android:id="@+id/findRestaurantsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#df89"
+        android:text="Find Products"
+        android:textColor="#fff" />
 </RelativeLayout>
