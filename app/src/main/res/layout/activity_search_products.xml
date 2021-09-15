@@ -9,7 +9,7 @@
         android:id="@+id/r5"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorOnSecondary"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         >
@@ -24,8 +24,8 @@
             android:background="#000"
             android:hint="Product Name"
             android:padding="9dp"
-            android:textColor="#fff"
-            android:textColorHint="#fff"
+            android:textColor="#F4B701"
+            android:textColorHint="#FFC107"
             android:textSize="18dp"
             android:textStyle="bold"
 
@@ -37,10 +37,9 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_toRightOf="@+id/search_product_name"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/colorOnSecondary"
             android:padding="9dp"
-            android:text="Search"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorOnSecondary"
             android:textSize="16dp"
             android:textStyle="bold" />
 
@@ -61,7 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="#df89"
+        android:background="#DDF8D804"
         android:text="Find Products"
         android:textColor="#fff" />
 </RelativeLayout>

@@ -116,8 +116,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.product_items_layout, parent, false);
                         ProductViewHolder holder = new ProductViewHolder(view);
                         return holder;
-                    }
-                };
+                    }                };
         recyclerView.setAdapter(adapter);
         adapter.startListening();
 

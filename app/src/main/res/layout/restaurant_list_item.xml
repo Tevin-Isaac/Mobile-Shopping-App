@@ -23,13 +23,13 @@
             android:id="@+id/restaurantNameTextView"
             android:textSize="20dp"
             android:textStyle="bold"
-            android:text="Restaurant Name"
+            android:text="Product Name"
             android:textColor="#000"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="One Cuisine Type"
+            android:text="Best or you"
             android:id="@+id/categoryTextView"
             android:textStyle="italic"/>
 
