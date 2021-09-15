@@ -8,18 +8,25 @@ Tevin Isaac
 
 ## Description
 
-This is a shopping mobile application where users can purchase sneakers and outfits.
+This is a  mobile shopping  application where users can get locations of where to purchase different products.A user can also 
+get products and add them to cart and purchase.Admins can add products to be purchased ir viewed by users.
 
 
-##  User Requirements
-The applications allow users to do the following:
+##  User Roles
+The application allows users to do the following:
+1.Search for locations to get products
+2.Order products for shipping on cart
+
+## Admin Roles
+Can add products inorder for users to access them.
+
 
 
 ## Known Bugs
 There are no known bugs at the moment
 
  ## Technologies Used
-Java, Spark,CSS
+Java
 
 
 
