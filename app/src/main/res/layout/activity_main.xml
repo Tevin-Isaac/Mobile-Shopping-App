@@ -25,7 +25,7 @@
         android:layout_marginEnd="80dp"
         android:text="Brandykicks"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/colorOnSecondary"
         android:textSize="32sp"
         android:textStyle="bold"/>
 
