@@ -50,10 +50,10 @@
             />
 
         <ImageView
-            android:id="@+id/sweathers"
+            android:id="@+id/sweater"
             android:layout_width="90dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/sweather"
+            android:src="@drawable/sweater"
             />
     </LinearLayout>
     <LinearLayout
@@ -91,7 +91,7 @@
             android:id="@+id/shoes"
             android:layout_width="70dp"
             android:layout_height="80dp"
-            android:src="@drawable/shoess"
+            android:src="@drawable/shoes"
             android:layout_marginStart="16dp"
             />
 
@@ -145,7 +145,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="10dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorSecondary"
         android:text="Check New Orders"
         android:textColor="@android:color/white"
         android:textSize="25dp"
@@ -160,7 +160,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="15dp"
-        android:background="@color/colorPrimaryDark"
+        android:background="@color/colorSecondary"
         android:text="Logout"
         android:textColor="@android:color/white"
         android:textSize="25dp"
