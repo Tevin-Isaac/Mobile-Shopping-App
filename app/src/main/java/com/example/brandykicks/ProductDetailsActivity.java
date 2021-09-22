@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.brandykicks.Model.Products;
-import com.example.brandykicks.Prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +27,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 public class ProductDetailsActivity extends AppCompatActivity {
-    private Button addToCartButton;
+    public Button addToCartButton;
     private ImageView productImage;
     private ElegantNumberButton numberButton;
     private TextView productPrice,productDescription,productName;
@@ -64,7 +63,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        CheckOrderState();
+//        CheckOrderState();
     }
 
     private void addingToCartList() {
@@ -84,11 +83,11 @@ public class ProductDetailsActivity extends AppCompatActivity {
         cartMap.put("quantity",numberButton.getNumber());
         cartMap.put("discount","");
 
-        cartListRef.child("User view").child(Prevalent.currentOnlineUser.getPhone()).child("Products").child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+        cartListRef.child("User view").child("Products").child(productID).updateChildren(cartMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()){
-                    cartListRef.child("Admin view").child(Prevalent.currentOnlineUser.getPhone())
+                    cartListRef.child("Admin view")
                             .child("Products").child(productID)
                             .updateChildren(cartMap)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -136,7 +135,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private void CheckOrderState()
     {
         DatabaseReference ordersRef;
-        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
+        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders");
         ordersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -144,7 +143,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
                     String shippingState = dataSnapshot.child("state").getValue().toString();
                     if (shippingState.equals("Shipped")){
                         state ="Order Shipped";
-                    }
+                   }
                     else if (shippingState.equals("Not Shipped")){
                         state ="Order Placed";
                     }

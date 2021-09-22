@@ -1,10 +1,9 @@
 package com.example.brandykicks;
 
+
 import android.content.DialogInterface;
 import android.content.Intent;
-
 import android.os.Bundle;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +35,7 @@ public class CartActivity extends AppCompatActivity{
     private RecyclerView.LayoutManager layoutManager;
     private Button NextProcessBtn;
     private TextView txtTotalAmount, txtMsg1;
-    private int overTotalPrice=0;
+    private int overTotalPrice;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,7 +50,7 @@ public class CartActivity extends AppCompatActivity{
         NextProcessBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                txtTotalAmount.setText("Total Price = Rs."+String.valueOf(overTotalPrice));
+                txtTotalAmount.setText("Total Price = Kshs."+String.valueOf(overTotalPrice));
                 Intent intent = new Intent(CartActivity.this,ConfirmFinalOrderActivity.class);
                 intent.putExtra("Total Price", String.valueOf(overTotalPrice));
                 startActivity(intent);
@@ -69,16 +68,16 @@ public class CartActivity extends AppCompatActivity{
         FirebaseRecyclerOptions<Cart> options =
                 new FirebaseRecyclerOptions.Builder<Cart>()
                         .setQuery(cartListRef.child("User view")
-                                .child(Prevalent.currentOnlineUser.getPhone()).child("Products"),Cart.class).build();
+                                .child("Products"),Cart.class).build();
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter
                 = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model) {
                 holder.txtProductQuantity.setText("Quantity = "+model.getQuantity());
-                holder.txtProductPrice.setText("Price = "+model.getPrice()+" Rs.");
+                holder.txtProductPrice.setText("Price = "+model.getPrice()+" Kshs.");
                 holder.txtProductName.setText(model.getPname());
-                int oneTyprProductTPrice = ((Integer.valueOf(model.getPrice())))* Integer.valueOf(model.getQuantity());
-                overTotalPrice = overTotalPrice + oneTyprProductTPrice;
+//                int oneTyprProductTPrice = ((Integer.valueOf(model.getPrice())))* Integer.valueOf(model.getQuantity());
+//                overTotalPrice = overTotalPrice + oneTyprProductTPrice;
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -109,7 +108,7 @@ public class CartActivity extends AppCompatActivity{
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()){
                                                         Toast.makeText(CartActivity.this,"Item removed Successfully.",Toast.LENGTH_SHORT).show();
-                                                        Intent intent = new Intent(CartActivity.this, com.example.brandykicks.HomeActivity.class);
+                                                        Intent intent = new Intent(CartActivity.this,HomeActivity.class);
                                                         startActivity(intent);
                                                     }
                                                 }
@@ -147,6 +146,15 @@ public class CartActivity extends AppCompatActivity{
                         txtTotalAmount.setText("TDear "+userName+"\n order is shipped successfully.");
                         recyclerView.setVisibility(View.GONE);
                         txtMsg1.setVisibility(View.VISIBLE);
+                        txtMsg1.setText("Congratulations, Your Final order has been shipped successfully. Soon you will received your order at your door step.");
+                        NextProcessBtn.setVisibility(View.GONE);
+                        Toast.makeText(CartActivity.this,"You can purchase more products, Once you received your first order",Toast.LENGTH_SHORT).show();
+                    }
+                    else if (shippingState.equals("Not Shipped")){
+                        txtTotalAmount.setText("Shipping State = Not Shipped");
+                        recyclerView.setVisibility(View.GONE);
+                        txtMsg1.setVisibility(View.VISIBLE);
+
                         txtMsg1.setText("Congratulations, Your Final order has been shipped successfully. Soon you will received your order at your door step.");
                         NextProcessBtn.setVisibility(View.GONE);
                         Toast.makeText(CartActivity.this,"You can purchase more products, Once you received your first order",Toast.LENGTH_SHORT).show();
