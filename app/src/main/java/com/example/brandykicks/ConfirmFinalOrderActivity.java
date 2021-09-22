@@ -23,16 +23,16 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 public class ConfirmFinalOrderActivity extends AppCompatActivity {
-    private EditText nameEditText,phoneEditText,addressEditText,cityEditText;
-    private Button confirmOrderBtn;
-    private String totalAmount = "";
+    public EditText nameEditText,phoneEditText,addressEditText,cityEditText;
+    public Button confirmOrderBtn;
+    public String totalAmount = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_final_order);
 
         totalAmount = getIntent().getStringExtra("Total Price");
-        Toast.makeText(this, "Total Price = Rs. "+totalAmount,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Total Price = Kshs. "+totalAmount,Toast.LENGTH_SHORT).show();
         confirmOrderBtn = (Button) findViewById(R.id.confirm_final_order_btn);
         nameEditText =(EditText) findViewById(R.id.shippment_name);
         phoneEditText =(EditText) findViewById(R.id.shippment_phone_number);
@@ -91,7 +91,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
                     FirebaseDatabase.getInstance().getReference()
                             .child("Cart List")
                             .child("User view")
-                            .child(Prevalent.currentOnlineUser.getPhone())
+//                            .child(Prevalent.currentOnlineUser.getPhone())
                             .removeValue()
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

@@ -1,7 +1,5 @@
 package com.example.brandykicks;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +10,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.brandykicks.Model.Business;
 import com.example.brandykicks.Model.Category;
@@ -47,9 +47,54 @@ public class ProductsActivity extends AppCompatActivity {
         });
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
-        mLocationTextView.setText("Here are all the restaurants near: " + location);
+        mLocationTextView.setText(
+
+"Here are all the shops near: " + location);
         YelpApi client = YelpClient.getClient();
-        Call<YelpBusinessesSearchResponse> call = client.getProducts(location, "Clothing Boutiques");
+        Call<YelpBusinessesSearchResponse> call = client.getProducts(location, "Shirts" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "" +
+                "");
         call.enqueue(new Callback<YelpBusinessesSearchResponse>() {
             @Override
             public void onResponse(Call<YelpBusinessesSearchResponse> call, Response<YelpBusinessesSearchResponse> response) {
