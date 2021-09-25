@@ -7,4 +7,5 @@
     <item name="admin_panel_link" type="id" />
     <item name="not_admin_panel_link" type="id" />
     <item name="remember_me_chkb" type="id" />
+    <item name="lottie" type="id" />
 </resources>
