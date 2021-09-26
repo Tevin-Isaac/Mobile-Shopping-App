@@ -22,7 +22,7 @@
         android:layout_height="50dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:src="@drawable/applogo" />
+        android:src="@drawable/brandykicks" />
 
     <TextView
         android:id="@+id/app_slogan"

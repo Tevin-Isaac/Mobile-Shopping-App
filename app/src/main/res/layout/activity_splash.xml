@@ -9,10 +9,10 @@
 
     tools:context=".SplashActivity">
 
-  <ImageView
-      android:id="@+id/imageView"
-      android:layout_width="300dp"
-      android:layout_height="150dp"
+<!--  <ImageView-->
+      tevin.isaac@student.moringaschool.comandroid:id="@+id/imageView"
+      android:layout_width="60dp"
+      android:layout_height="50dp"
       android:layout_marginTop="1dp"
       android:layout_centerHorizontal="true"
       android:src="@drawable/brandykicks"
@@ -21,10 +21,10 @@
       tools:layout_editor_absoluteY="33dp" />
   <com.airbnb.lottie.LottieAnimationView
       android:id="@+id/animationView"
-      android:layout_width="345dp"
-      android:layout_height="480dp"
+      android:layout_width="400dp"
+      android:layout_height="700dp"
       app:lottie_autoPlay="true"
-      android:layout_alignParentBottom="true"
+      android:layout_alignParent="true"
       android:layout_centerHorizontal="true"
       app:lottie_rawRes="@raw/shopping"
       app:lottie_loop="true"/>
