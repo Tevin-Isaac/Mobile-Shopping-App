@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.brandykicks.Prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,10 +27,12 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
     public EditText nameEditText,phoneEditText,addressEditText,cityEditText;
     public Button confirmOrderBtn;
     public String totalAmount = "";
+    LottieAnimationView lottieAnimationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm_final_order);
+        lottieAnimationView = findViewById(R.id.animationView);
 
         totalAmount = getIntent().getStringExtra("Total Price");
         Toast.makeText(this, "Total Price = Kshs. "+totalAmount,Toast.LENGTH_SHORT).show();
