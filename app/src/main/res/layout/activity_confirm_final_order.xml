@@ -59,6 +59,16 @@
         android:layout_marginRight="20dp"
         android:hint="Your City Name"
         />
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="350dp"
+        android:layout_height="320dp"
+        app:lottie_autoPlay="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:lottie_rawRes="@raw/payment"
+        app:lottie_loop="true"/>
+
     <Button
         android:id="@+id/confirm_final_order_btn"
         android:layout_width="match_parent"

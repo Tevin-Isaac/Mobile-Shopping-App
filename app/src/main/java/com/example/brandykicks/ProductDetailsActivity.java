@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.brandykicks.Model.Products;
+import com.example.brandykicks.Prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -50,7 +51,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (state.equals("Order Placed") || state.equals("Order Shipped")){
-                    Toast.makeText(ProductDetailsActivity.this,"You can add Purchase more product, once your order is shipped or confirmed",Toast.LENGTH_LONG).show();
+                    Toast.makeText(ProductDetailsActivity.this,"You can  Purchase more products, once you are satisfied",Toast.LENGTH_LONG).show();
                 }
                 else
                 {
@@ -135,7 +136,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private void CheckOrderState()
     {
         DatabaseReference ordersRef;
-        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders");
+        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getPhone());
         ordersRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
