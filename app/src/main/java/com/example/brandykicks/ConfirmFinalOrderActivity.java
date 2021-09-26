@@ -91,7 +91,7 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
                     FirebaseDatabase.getInstance().getReference()
                             .child("Cart List")
                             .child("User view")
-//                            .child(Prevalent.currentOnlineUser.getPhone())
+                            .child(Prevalent.currentOnlineUser.getPhone())
                             .removeValue()
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

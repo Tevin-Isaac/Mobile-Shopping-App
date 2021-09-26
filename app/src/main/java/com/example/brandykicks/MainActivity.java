@@ -2,7 +2,6 @@ package com.example.brandykicks;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -12,6 +11,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.brandykicks.Model.Users;
 import com.example.brandykicks.Prevalent.Prevalent;
 import com.google.firebase.database.DataSnapshot;
@@ -25,10 +25,13 @@ import io.paperdb.Paper;
 public class MainActivity extends AppCompatActivity {
     private Button joinNowButton, loginButton;
     private ProgressDialog loadingBar;
+
+    LottieAnimationView lottieAnimationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        lottieAnimationView = findViewById(R.id.animationView);
         joinNowButton = (Button) findViewById(R.id.main_join_now_btn);
         loginButton = (Button) findViewById(R.id.main_login_btn);
         loadingBar = new ProgressDialog(this);
