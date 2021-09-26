@@ -35,7 +35,7 @@ public class CartActivity extends AppCompatActivity{
     private RecyclerView.LayoutManager layoutManager;
     private Button NextProcessBtn;
     private TextView txtTotalAmount, txtMsg1;
-    private int overTotalPrice;
+    private int overTotalPrice=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,14 +70,14 @@ public class CartActivity extends AppCompatActivity{
                         .setQuery(cartListRef.child("User view")
                                 .child("Products"),Cart.class).build();
         FirebaseRecyclerAdapter<Cart, CartViewHolder> adapter
-                = new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
+                =  new FirebaseRecyclerAdapter<Cart, CartViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull CartViewHolder holder, int position, @NonNull final Cart model) {
                 holder.txtProductQuantity.setText("Quantity = "+model.getQuantity());
                 holder.txtProductPrice.setText("Price = "+model.getPrice()+" Kshs.");
                 holder.txtProductName.setText(model.getPname());
-//                int oneTyprProductTPrice = ((Integer.valueOf(model.getPrice())))* Integer.valueOf(model.getQuantity());
-//                overTotalPrice = overTotalPrice + oneTyprProductTPrice;
+//                int ProductTPrice = ((Integer.valueOf(model.getPrice())))* Integer.valueOf(model.getQuantity());
+//                overTotalPrice = overTotalPrice + ProductTPrice;
 
                 holder.itemView.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -155,17 +155,17 @@ public class CartActivity extends AppCompatActivity{
                         recyclerView.setVisibility(View.GONE);
                         txtMsg1.setVisibility(View.VISIBLE);
 
-                        txtMsg1.setText("Congratulations, Your Final order has been shipped successfully. Soon you will received your order at your door step.");
+                        txtMsg1.setText("Thank you, Your Final order has been received.We will be in contact soon");
                         NextProcessBtn.setVisibility(View.GONE);
-                        Toast.makeText(CartActivity.this,"You can purchase more products, Once you received your first order",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CartActivity.this,"Be Free to  purchase more products",Toast.LENGTH_SHORT).show();
                     }
                     else if (shippingState.equals("Not Shipped")){
-                        txtTotalAmount.setText("Shipping State = Not Shipped");
+                        txtTotalAmount.setText(" State = Not Shipped");
                         recyclerView.setVisibility(View.GONE);
                         txtMsg1.setVisibility(View.VISIBLE);
 
                         NextProcessBtn.setVisibility(View.GONE);
-                        Toast.makeText(CartActivity.this,"You can purchase more products, Once you received your first order",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(CartActivity.this,"Be free to purchase more products",Toast.LENGTH_SHORT).show();
                     }
                 }
             }

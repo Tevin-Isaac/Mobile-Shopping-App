@@ -11,8 +11,10 @@
 
   <ImageView
       android:id="@+id/imageView"
-      android:layout_width="360dp"
-      android:layout_height="200dp"
+      android:layout_width="300dp"
+      android:layout_height="150dp"
+      android:layout_marginTop="1dp"
+      android:layout_centerHorizontal="true"
       android:src="@drawable/brandykicks"
       tools:ignore="MissingConstraints"
       tools:layout_editor_absoluteX="35dp"
